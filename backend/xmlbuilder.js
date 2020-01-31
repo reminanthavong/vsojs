@@ -10,7 +10,7 @@ const generate = async (request, response) => {
   .end({ pretty: true});
  
 console.log(xml);
-var result = [];
+var result = {};
 result.xml = xml;
 response.set({'content-type': 'application/json'});
 response.send(JSON.stringify(result));
