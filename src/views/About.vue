@@ -95,7 +95,7 @@ tr:nth-child(even) {
 var pom = document.createElement('a');
 
 var filename = "file.xml";
-var pom = document.createElement('a');
+
 var bb = new Blob([this.xmlresult], {type: 'text/plain'});
 
 pom.setAttribute('href', window.URL.createObjectURL(bb));
