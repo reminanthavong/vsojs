@@ -3,7 +3,7 @@ const serveStatic = require("serve-static")
 const path = require('path');
 const bodyParser = require('body-parser');
 const xmlcode = require('./backend/xmlbuilder')
-app = express();
+const app = express();
 const router = express.Router();
 app.use(serveStatic(path.join(__dirname, 'dist')));
 app.use(bodyParser.json())
