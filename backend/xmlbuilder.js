@@ -1,4 +1,5 @@
 var builder = require('xmlbuilder');
+var log4js = require('log4js');
  
 const generate = async (request, response) => {
  var eName = request.body.name
