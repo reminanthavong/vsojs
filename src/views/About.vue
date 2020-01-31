@@ -7,7 +7,7 @@
     <b-form-textarea
       id="textarea"
       v-model="text"
-      placeholder="Egdgemarc name list (one by line)"
+      placeholder="Edgemarc name list (one by line)"
       rows="3"
       max-rows="6"
     ></b-form-textarea>
@@ -15,7 +15,7 @@
     <b-form-textarea
       id="textarea"
       v-model="address"
-      placeholder="Egdgemarc ip address list (one by line)"
+      placeholder="Edgemarc ip address list (one by line)"
       rows="3"
       max-rows="6"
     ></b-form-textarea>
@@ -68,7 +68,23 @@ tr:nth-child(even) {
     methods: {
       onSubmit(evt) {
         evt.preventDefault()
-        alert('Result')
+        const jsonForm = {};
+                    jsonForm.name = this.text;
+                    jsonForm.address = this.address;
+        fetch('/makexml', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonForm)
+                })
+                .then((response) => {
+                    return response.json()
+                })
+                .catch(error => {
+                    console.log(error);
+                });
       },
       onReset(evt) {
         evt.preventDefault()
