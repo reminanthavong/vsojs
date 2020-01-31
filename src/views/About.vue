@@ -3,11 +3,34 @@
     <h1>Create XML for Edgeview</h1>
     <h2>For Edgemarc upgrade</h2>
     <br>
-    <span>Edgemarcs List:</span>
-    <p style="white-space: pre-line;">{{ edgemarc }}</p>
-    <br>
-    <textarea v-model="edgemarc" placeholder="add multiple lines"></textarea>
-    <textarea v-model="address" placeholder="add multiple lines"></textarea>
-    <br>
+    <b-form-textarea
+      id="textarea"
+      v-model="text"
+      placeholder="Enter something..."
+      rows="3"
+      max-rows="6"
+    ></b-form-textarea>
+    
+    <b-form-textarea
+      id="textarea"
+      v-model="address"
+      placeholder="Enter something..."
+      rows="3"
+      max-rows="6"
+    ></b-form-textarea>
+
+    <pre class="mt-3 mb-0">{{ text }}</pre>
+    <pre class="mt-3 mb-0">{{ address }}</pre>
   </div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        text: '',
+        address: ''
+      }
+    }
+  }
+</script>
