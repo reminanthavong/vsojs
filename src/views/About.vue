@@ -18,9 +18,9 @@
       rows="3"
       max-rows="6"
     ></b-form-textarea>
-
-    <pre class="mt-3 mb-0">{{ text }}</pre>
-    <pre class="mt-3 mb-0">{{ address }}</pre>
+    
+    <b-table striped hover :items="items"></b-table>
+    
   </div>
 </template>
 
@@ -28,8 +28,9 @@
   export default {
     data() {
       return {
-        text: '',
-        address: ''
+        items: [
+          { text: '', address: '' }
+        ]
       }
     }
   }
