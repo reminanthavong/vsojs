@@ -63,7 +63,7 @@ tr:nth-child(even) {
         text: '', 
         address: '' 
       }
-    }
+    },
     methods: {
       onSubmit(evt) {
         evt.preventDefault()
