@@ -67,7 +67,7 @@ tr:nth-child(even) {
       }
     },
     methods: {
-      download(filename, text) {
+      download : function (filename, text) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
   element.setAttribute('download', filename);
@@ -101,7 +101,7 @@ tr:nth-child(even) {
                 .catch(error => {
                     console.log(error);
                 });
-                download('edgemarclist.xml', this.xmlresult)
+                download('edgemarclist.xml', this.xmlresult);
       },
       onReset(evt) {
         evt.preventDefault()
