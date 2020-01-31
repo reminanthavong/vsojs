@@ -34,7 +34,8 @@
     <td><pre class="mt-3 mb-0">{{ text }}</pre></td>
     <td><pre class="mt-3 mb-0">{{ address }}</pre></td>
   </tr>
-</table>   
+</table>  
+  <pre class="mt-3 mb-0">{{ xmlresult }}</pre>
   </div>
 </template>
 
@@ -92,7 +93,7 @@ tr:nth-child(even) {
                     console.log(error);
                 });
                 var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(this.xmlresult));
+  element.setAttribute('href', 'data:Application/octet-stream,' + encodeURIComponent(this.xmlresult));
   element.setAttribute('download', 'edgemarclist.xml');
 
   element.style.display = 'none';
