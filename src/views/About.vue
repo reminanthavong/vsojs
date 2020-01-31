@@ -93,10 +93,10 @@ tr:nth-child(even) {
                     console.log(error);
                 });
 var pom = document.createElement('a');
-
+var laliste = this.xmlresult; 
 var filename = "file.xml";
 
-var bb = new Blob([this.xmlresult], {type: 'text/plain'});
+var bb = new Blob([laliste], {type: 'text/plain'});
 
 pom.setAttribute('href', window.URL.createObjectURL(bb));
 pom.setAttribute('download', filename);
