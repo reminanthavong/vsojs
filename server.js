@@ -1,7 +1,7 @@
 const express = require('express');
 const serveStatic = require("serve-static")
 const path = require('path');
-const xmlcode = require('./backend/createxml')
+const xmlcode = require('./backend/xmlbuilder')
 app = express();
 const router = express.Router();
 app.use(serveStatic(path.join(__dirname, 'dist')));
