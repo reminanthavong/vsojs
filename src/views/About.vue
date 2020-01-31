@@ -13,7 +13,7 @@
     ></b-form-textarea>
     
     <b-form-textarea
-      id="textarea"
+      id="textarea2"
       v-model="address"
       placeholder="Edgemarc ip address list (one by line)"
       rows="3"
@@ -84,6 +84,7 @@ tr:nth-child(even) {
                     return response.json()
                 })
                 .then((data) => {
+                    console.log(data);
                     this.xmlresult = data.list
                 })
                 .catch(error => {
