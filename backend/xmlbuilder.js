@@ -1,6 +1,5 @@
 var builder = require('xmlbuilder');
-var log4js = require('log4js');
- 
+
 const generate = async (request, response) => {
  var eName = request.body.name
  var eIp = request.body.address
@@ -11,11 +10,9 @@ const generate = async (request, response) => {
   .end({ pretty: true});
  
 console.log(xml);
-//response.send(JSON.stringify(xml));
- response.redirect(
-        "/createxml" + encodeURIComponent(xml)
-      );
-};
+response.set({'content-type': 'application/json'});
+response.send(JSON.stringify(xml));
+
 
 
 module.exports = {
