@@ -92,7 +92,12 @@ tr:nth-child(even) {
                 .catch(error => {
                     console.log(error);
                 });
-                document.open('data:Application/octet-stream,' + encodeURIComponent(this.xmlresult));
+      const url = window.URL.createObjectURL(this.xmlresult)
+      const link = document.createElement('a')
+      link.href = url
+      link.setAttribute('download', 'edgemarclist.xml')
+      document.body.appendChild(link)
+      link.click()
       },
       onReset(evt) {
         evt.preventDefault()
