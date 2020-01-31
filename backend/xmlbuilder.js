@@ -12,9 +12,9 @@ const generate = async (request, response) => {
 console.log(xml);
 response.set({'content-type': 'application/json'});
 response.send(JSON.stringify(xml));
-
+}
 
 
 module.exports = {
   generate
-};
+}
