@@ -1,9 +1,19 @@
 var builder = require('xmlbuilder');
  
-var xml = builder.create('EDGEVIEW')
+const generate = async (request, response) => {
+ var eName = request.body.name
+ var eIp = request.body.address
+  var xml = builder.create('EDGEVIEW')
   .ele('EDGEMARC')
-    .ele('NAME', 'git://github.com/oozcitak/xmlbuilder-js.git')
-    .ele('ADDRESS', 'git://github.com/oozcitak/xmlbuilder-js.git')
+    .ele('NAME', eName)
+    .ele('ADDRESS', eIp)
   .end({ pretty: true});
  
 console.log(xml);
+response.send(JSON.stringify(xml));
+};
+
+
+module.exports = {
+  generate
+};
