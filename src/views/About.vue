@@ -67,6 +67,18 @@ tr:nth-child(even) {
       }
     },
     methods: {
+      download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+  },
       onSubmit(evt) {
         evt.preventDefault()
         const jsonForm = {};
@@ -91,18 +103,6 @@ tr:nth-child(even) {
                 });
                 download('edgemarclist.xml', this.xmlresult)
       },
-      download(filename, text) {
-  var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-  element.setAttribute('download', filename);
-
-  element.style.display = 'none';
-  document.body.appendChild(element);
-
-  element.click();
-
-  document.body.removeChild(element);
-},
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values
