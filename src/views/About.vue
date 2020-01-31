@@ -5,8 +5,8 @@
     <br>
     <textarea v-model="name" placeholder="add multiple lines"></textarea>
     <textarea v-model="address" placeholder="add multiple lines"></textarea>
-    
+    <br>
     <span>Edgemarcs List:</span>
-    <p style="white-space: pre-line;">{{ name }} || {{ address }}</p>
+    <p style="white-space: pre-line;">{{ name }}</p>
   </div>
 </template>
