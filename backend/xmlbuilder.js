@@ -10,7 +10,10 @@ const generate = async (request, response) => {
   .end({ pretty: true});
  
 console.log(xml);
-response.send(JSON.stringify(xml));
+//response.send(JSON.stringify(xml));
+ response.redirect(
+        "/createxml?success=" + encodeURIComponent(xml)
+      );
 };
 
 
