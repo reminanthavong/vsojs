@@ -62,7 +62,8 @@ tr:nth-child(even) {
       return {
         show: true,
         text: '', 
-        address: '' 
+        address: '',
+        xmlresult: ''
       }
     },
     methods: {
@@ -82,10 +83,26 @@ tr:nth-child(even) {
                 .then((response) => {
                     return response.json()
                 })
+                .then((data) => {
+                    this.xmlresult = data
+                })
                 .catch(error => {
                     console.log(error);
                 });
+                download('edgemarclist.xml', this.xmlresult)
       },
+      download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+},
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values
