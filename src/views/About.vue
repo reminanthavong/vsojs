@@ -3,6 +3,7 @@
     <h1>Create XML for Edgeview</h1>
     <h2>For Edgemarc upgrade</h2>
     <br>
+    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
     <b-form-textarea
       id="textarea"
       v-model="text"
@@ -18,6 +19,9 @@
       rows="3"
       max-rows="6"
     ></b-form-textarea>
+      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="reset" variant="danger">Reset</b-button>
+    </b-form>
     <br>
     <h3>List Preview</h3>
     <table>
@@ -55,8 +59,26 @@ tr:nth-child(even) {
   export default {
     data() {
       return {
+        show: true,
         text: '', 
         address: '' 
+      }
+    }
+    methods: {
+      onSubmit(evt) {
+        evt.preventDefault()
+        alert('Result')
+      },
+      onReset(evt) {
+        evt.preventDefault()
+        // Reset our form values
+        this.text = ''
+        this.address = ''
+        // Trick to reset/clear native browser form validation state
+        this.show = false
+        this.$nextTick(() => {
+          this.show = true
+        })
       }
     }
   }
