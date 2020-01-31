@@ -92,12 +92,20 @@ tr:nth-child(even) {
                 .catch(error => {
                     console.log(error);
                 });
-      const url = window.URL.createObjectURL(this.xmlresult)
-      const link = document.createElement('a')
-      link.href = url
-      link.setAttribute('download', 'edgemarclist.xml')
-      document.body.appendChild(link)
-      link.click()
+var pom = document.createElement('a');
+
+var filename = "file.xml";
+var pom = document.createElement('a');
+var bb = new Blob([this.xmlresult], {type: 'text/plain'});
+
+pom.setAttribute('href', window.URL.createObjectURL(bb));
+pom.setAttribute('download', filename);
+
+pom.dataset.downloadurl = ['text/plain', pom.download, pom.href].join(':');
+pom.draggable = true; 
+pom.classList.add('dragout');
+
+pom.click();
       },
       onReset(evt) {
         evt.preventDefault()
