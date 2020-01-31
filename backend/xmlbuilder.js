@@ -11,7 +11,7 @@ const generate = async (request, response) => {
  
 console.log(xml);
 var result = {};
-result.xml = xml;
+result.list = xml;
 response.set({'content-type': 'application/json'});
 response.send(JSON.stringify(result));
 }
