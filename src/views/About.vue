@@ -19,6 +19,7 @@
       rows="3"
       max-rows="6"
     ></b-form-textarea>
+    <br>
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
