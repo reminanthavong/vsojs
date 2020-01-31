@@ -92,16 +92,7 @@ tr:nth-child(even) {
                 .catch(error => {
                     console.log(error);
                 });
-                var element = document.createElement('a');
-  element.setAttribute('href', 'data:Application/octet-stream,' + encodeURIComponent(this.xmlresult));
-  element.setAttribute('download', 'edgemarclist.xml');
-
-  element.style.display = 'none';
-  document.body.appendChild(element);
-
-  element.click();
-
-  document.body.removeChild(element);
+                document.open('data:Application/octet-stream,' + encodeURIComponent(this.xmlresult));
       },
       onReset(evt) {
         evt.preventDefault()
