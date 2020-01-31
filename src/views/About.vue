@@ -87,13 +87,8 @@ tr:nth-child(even) {
                 .then((data) => {
                     console.log(data.list);
                     this.xmlresult = data.list
-                    
-                })
-                .catch(error => {
-                    console.log(error);
-                });
-var pom = document.createElement('a');
-var laliste = this.xmlresult; 
+                    var pom = document.createElement('a');
+var laliste = data.list; 
 var filename = "file.xml";
 
 var bb = new Blob([laliste], {type: 'text/plain'});
@@ -106,6 +101,11 @@ pom.draggable = true;
 pom.classList.add('dragout');
 
 pom.click();
+                    
+                })
+                .catch(error => {
+                    console.log(error);
+                });
       },
       onReset(evt) {
         evt.preventDefault()
