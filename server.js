@@ -23,6 +23,6 @@ const enableCrossDomain = function(req, res, next) {
 app.use(enableCrossDomain)
 // Fonction Login
 router.post('/makexml', xmlcode.generate)
-app.user(router)
+app.use(router)
 const port = process.env.PORT || 80;
 app.listen(port);
