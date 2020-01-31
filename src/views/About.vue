@@ -84,7 +84,7 @@ tr:nth-child(even) {
                     return response.json()
                 })
                 .then((data) => {
-                    this.xmlresult = data.xml
+                    this.xmlresult = data.list
                 })
                 .catch(error => {
                     console.log(error);
