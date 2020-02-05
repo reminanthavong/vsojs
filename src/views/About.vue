@@ -35,7 +35,8 @@
     <td><pre class="mt-3 mb-0">{{ text }}</pre></td>
     <td><pre class="mt-3 mb-0">{{ address }}</pre></td>
   </tr>
-</table>  
+</table> 
+   <br>
   <h3> XML Result </h3>
   <pre class="mt-3 mb-0">{{ xmlresult }}</pre>
   </div>
