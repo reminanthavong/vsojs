@@ -90,12 +90,12 @@ tr:nth-child(even) {
                 })
                 .then((data) => {
                     this.eventTimestamp = new Date();
-                    var n = this.eventTimestamp.toLocaleDateString();
-                    
+                    var laDate = this.eventTimestamp.toLocaleDateString();
+                    var laTemps = d.toLocaleTimeString();
                     this.xmlresult = data.list
                     var pom = document.createElement('a');
 var laliste = data.list; 
-var filename = "edgemarc_Upgrade_List_" + n + ".xml";
+var filename = "edgemarc_Upgrade_List_" + laDate + "-" + laTemps + ".xml";
 
 var bb = new Blob([laliste], {type: 'text/plain'});
 
