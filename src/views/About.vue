@@ -67,6 +67,7 @@ tr:nth-child(even) {
         show: true,
         text: '', 
         address: '',
+        eventTimestamp: null,
         xmlresult: ''
       }
     },
@@ -88,11 +89,11 @@ tr:nth-child(even) {
                     return response.json()
                 })
                 .then((data) => {
-                    console.log(data.list);
+                    this.eventTimestamp = document.data.event_timestamp;
                     this.xmlresult = data.list
                     var pom = document.createElement('a');
 var laliste = data.list; 
-var filename = "file.xml";
+var filename = "edgemarc_Upgrade_List" + this.eventTimestamp + ".xml";
 
 var bb = new Blob([laliste], {type: 'text/plain'});
 
