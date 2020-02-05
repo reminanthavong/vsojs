@@ -91,7 +91,7 @@ tr:nth-child(even) {
                 .then((data) => {
                     this.eventTimestamp = new Date();
                     var laDate = this.eventTimestamp.toLocaleDateString();
-                    var laTemps = d.toLocaleTimeString();
+                    var laTemps = this.eventTimestamp.toLocaleTimeString();
                     this.xmlresult = data.list
                     var pom = document.createElement('a');
 var laliste = data.list; 
