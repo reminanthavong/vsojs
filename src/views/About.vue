@@ -89,11 +89,13 @@ tr:nth-child(even) {
                     return response.json()
                 })
                 .then((data) => {
-                    this.eventTimestamp = document.data.event_timestamp;
+                    this.eventTimestamp = new Date();
+                    var n = this.eventTimestamp.toLocaleTimeString();
+                    
                     this.xmlresult = data.list
                     var pom = document.createElement('a');
 var laliste = data.list; 
-var filename = "edgemarc_Upgrade_List" + this.eventTimestamp + ".xml";
+var filename = "edgemarc_Upgrade_List" + n + ".xml";
 
 var bb = new Blob([laliste], {type: 'text/plain'});
 
