@@ -2,17 +2,18 @@ var builder = require('xmlbuilder');
 
 const generate = async (request, response) => {
  var eName = request.body.name
- var lines = eName.split('\n');
-for(var i = 0;i < lines.length;i++){
-   console.log(lines[i])
-}
  var eIp = request.body.address
   var xml = builder.create('EDGEVIEW')
-  .ele('EDGEMARC')
-    .ele('NAME', eName).up()
-    .ele('ADDRESS', eIp).up()
-  .end({ pretty: true});
- 
+   var lines = eName.split('\n');
+   var lines2 = eIp.split('\n');
+for(var i = 0;i < lines.length;i++){
+   //console.log(lines[i])
+    xml.ele('EDGEMARC')
+    xml.ele('NAME', lines[i]).up()
+    xml.ele('ADDRESS', lines2[i]).up()
+    
+}
+ xml.end({ pretty: true});
 console.log(xml);
 var result = {};
 result.list = xml;
