@@ -2,7 +2,7 @@ var builder = require('xmlbuilder');
 
 const generate = async (request, response) => {
  var eName = request.body.name
- var lines = eName.val().split('\n');
+ var lines = eName.split('\n');
 for(var i = 0;i < lines.length;i++){
    console.log(lines[i])
 }
