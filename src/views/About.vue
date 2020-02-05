@@ -2,7 +2,7 @@
   <div class="about">
     <h1>Create XML for Edgeview</h1>
     <h2>For Edgemarc upgrade</h2>
-    <h3>NOTE: The XML file should contain no more than 1000 EdgeMarcs. Additional EdgeMarcs will be ignored.</h3>
+    <h3> NOTE: The XML file should contain no more than 1000 EdgeMarcs. Additional EdgeMarcs will be ignored </h3>
     <br>
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
     <b-form-textarea
@@ -36,7 +36,7 @@
     <td><pre class="mt-3 mb-0">{{ address }}</pre></td>
   </tr>
 </table>  
-  h3>XML Result</h3>
+  <h3> XML Result </h3>
   <pre class="mt-3 mb-0">{{ xmlresult }}</pre>
   </div>
 </template>
